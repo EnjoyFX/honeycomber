@@ -242,8 +242,8 @@ def main():
 
     # Retrieve the bounding box of the honeycomb for frame creation
     bounds = honeycomb_shape.BoundBox
-    x_min, x_max = bounds.XMin, bounds.XMax
-    y_min, y_max = bounds.YMin, bounds.YMax
+    x_min, x_max = bounds.XMin + frame_thickness, bounds.XMax - frame_thickness
+    y_min, y_max = bounds.YMin + frame_thickness, bounds.YMax - frame_thickness
     App.Console.PrintMessage(f"Honeycomb bounds: X=({x_min:.2f}, {x_max:.2f}), Y=({y_min:.2f}, {y_max:.2f})\n")
 
     # Generate the frame using the FrameGenerator class
